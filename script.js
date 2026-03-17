@@ -261,13 +261,26 @@ function initMobileMenu() {
 }
 
 // ============================================
-// Contact Form (Frontend only)
+// Contact Form (Formspree)
 // ============================================
 function initContactForm() {
   const form = document.getElementById('contactForm');
+  if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const statusEl = document.getElementById('formStatus');
+  const formEndpoint = form.dataset.formEndpoint;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!formEndpoint || formEndpoint.includes('SEU_FORM_ID')) {
+      if (statusEl) {
+        statusEl.textContent = 'Configure o endpoint do Formspree para ativar o envio.';
+        statusEl.classList.remove('success');
+        statusEl.classList.add('error');
+      }
+      return;
+    }
 
     // Get form values
     const formData = new FormData(form);
@@ -279,26 +292,47 @@ function initContactForm() {
 
     submitBtn.innerHTML = '<span>Enviando...</span><i class="fas fa-spinner fa-spin"></i>';
     submitBtn.disabled = true;
+    if (statusEl) {
+      statusEl.textContent = '';
+      statusEl.classList.remove('success', 'error');
+    }
 
-    // Simulate API call (remove this when implementing backend)
-    setTimeout(() => {
+    try {
+      const response = await fetch(formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) {
+        throw new Error('Falha ao enviar formulário');
+      }
+
       submitBtn.innerHTML = '<span>Mensagem Enviada!</span><i class="fas fa-check"></i>';
       submitBtn.style.background = 'linear-gradient(135deg, #27c93f 0%, #20b53a 100%)';
-
-      // Reset form
+      if (statusEl) {
+        statusEl.textContent = 'Mensagem enviada com sucesso. Obrigado pelo contato!';
+        statusEl.classList.remove('error');
+        statusEl.classList.add('success');
+      }
       form.reset();
-
-      // Reset button after delay
+    } catch (error) {
+      if (statusEl) {
+        statusEl.textContent = 'Nao foi possivel enviar agora. Tente novamente em instantes.';
+        statusEl.classList.remove('success');
+        statusEl.classList.add('error');
+      }
+      console.error('Erro no envio do formulario:', error);
+    } finally {
       setTimeout(() => {
         submitBtn.innerHTML = originalContent;
         submitBtn.style.background = '';
         submitBtn.disabled = false;
-      }, 3000);
-    }, 1500);
-
-    // TODO: Implement your backend integration here
-    // Example: send to API, email service, etc.
-    console.log('Form data:', data);
+      }, 2000);
+    }
   });
 
   // Input focus effects

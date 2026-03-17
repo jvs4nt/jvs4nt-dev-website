@@ -1072,6 +1072,21 @@ a {
   margin-top: 10px;
 }
 
+.form-status {
+  min-height: 24px;
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.form-status.success {
+  color: #6ee7b7;
+}
+
+.form-status.error {
+  color: #fca5a5;
+}
+
 /* ========================================
    Footer
    ======================================== */
