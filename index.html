@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de João Santos Dev - Desenvolvedor de software">
+  <meta name="keywords" content="portfólio, desenvolvedor, programação, github, projetos">
+  <meta name="author" content="João Santos Dev">
+  <title>João Santos Dev | Portfólio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Cursor personalizado -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Background animado -->
+  <div class="bg-animation">
+    <div class="grid"></div>
+    <div class="glow-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+  </div>
+
+  <!-- Navegação -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">jvs4nt</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">Sobre</a></li>
+        <li><a href="#projects" class="nav-link">Projetos</a></li>
+        <li><a href="#contact" class="nav-link">Contato</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hero-greeting">Olá, eu sou</p>
+          <h1 class="hero-title">
+            <span class="gradient-text">João Santos Dev</span>
+          </h1>
+          <div class="typewriter-container">
+            <span class="typewriter"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+          <p class="hero-description">
+            Transformando ideias em código limpo e soluções inovadoras.
+            Especializado em criar experiências digitais modernas e performáticas.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <span>Ver Projetos</span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contato</span>
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/jvs4nt" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:contato@jvs4nt.dev" class="social-link" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-container">
+            <div class="code-block">
+              <div class="code-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+  <span class="key">name</span>: <span class="string">'João Santos'</span>,
+  <span class="key">role</span>: <span class="string">'Full Stack Dev'</span>,
+  <span class="key">location</span>: <span class="string">'Brasil'</span>,
+  <span class="key">skills</span>: [
+    <span class="string">'JavaScript'</span>,
+    <span class="string">'TypeScript'</span>,
+    <span class="string">'React'</span>,
+    <span class="string">'Node.js'</span>
+  ],
+  <span class="key">passion</span>: <span class="string">'Clean Code'</span>
+};
+
+<span class="keyword">function</span> <span class="function">buildAwesome</span>() {
+  <span class="keyword">return</span> developer.<span class="function">createMagic</span>();
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll para explorar</span>
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;sobre /&gt;</span>
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Desenvolvimento</h3>
+            <p>Criando soluções de software escaláveis e manuteníveis com as melhores práticas do mercado.</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <h3>Full Stack</h3>
+            <p>Domínio completo do desenvolvimento web, do frontend ao backend, com foco em performance.</p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Inovação</h3>
+            <p>Sempre explorando novas tecnologias e metodologias para entregar produtos de excelência.</p>
+          </div>
+        </div>
+        <div class="skills-container">
+          <h3 class="skills-title">Tech Stack</h3>
+          <div class="skills-grid">
+            <div class="skill-item" data-skill="JavaScript">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item" data-skill="TypeScript">
+              <i class="fab fa-js-square"></i>
+              <span>TypeScript</span>
+            </div>
+            <div class="skill-item" data-skill="React">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </div>
+            <div class="skill-item" data-skill="Node.js">
+              <i class="fab fa-node"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item" data-skill="Python">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-item" data-skill="Git">
+              <i class="fab fa-git-alt"></i>
+              <span>Git</span>
+            </div>
+            <div class="skill-item" data-skill="Docker">
+              <i class="fab fa-docker"></i>
+              <span>Docker</span>
+            </div>
+            <div class="skill-item" data-skill="AWS">
+              <i class="fab fa-aws"></i>
+              <span>AWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;projetos /&gt;</span>
+        <h2 class="section-title">Meus Projetos</h2>
+        <div class="title-underline"></div>
+        <p class="section-description">Explore alguns dos meus trabalhos mais recentes no GitHub</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Card 1 -->
+        <article class="project-card">
+          <div class="card-header">
+            <div class="folder-icon">
+              <i class="far fa-folder"></i>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" aria-label="Código fonte">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Preview do projeto">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">E-commerce Platform</h3>
+          <p class="card-description">
+            Plataforma completa de e-commerce com carrinho, checkout e integração de pagamentos.
+          </p>
+          <div class="card-techs">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe</span>
+          </div>
+          <div class="card-stats">
+            <span class="stat"><i class="far fa-star"></i> 128</span>
+            <span class="stat"><i class="fas fa-code-branch"></i> 24</span>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="project-card">
+          <div class="card-header">
+            <div class="folder-icon">
+              <i class="far fa-folder"></i>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" aria-label="Código fonte">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Preview do projeto">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Task Management App</h3>
+          <p class="card-description">
+            Aplicativo de gerenciamento de tarefas com drag-and-drop e colaboração em tempo real.
+          </p>
+          <div class="card-techs">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Socket.io</span>
+          </div>
+          <div class="card-stats">
+            <span class="stat"><i class="far fa-star"></i> 89</span>
+            <span class="stat"><i class="fas fa-code-branch"></i> 15</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project-card">
+          <div class="card-header">
+            <div class="folder-icon">
+              <i class="far fa-folder"></i>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" aria-label="Código fonte">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Preview do projeto">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Dev Portfolio Template</h3>
+          <p class="card-description">
+            Template moderno e responsivo para portfólio de desenvolvedores com animações suaves.
+          </p>
+          <div class="card-techs">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">GSAP</span>
+          </div>
+          <div class="card-stats">
+            <span class="stat"><i class="far fa-star"></i> 256</span>
+            <span class="stat"><i class="fas fa-code-branch"></i> 42</span>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="project-card">
+          <div class="card-header">
+            <div class="folder-icon">
+              <i class="far fa-folder"></i>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" aria-label="Código fonte">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Preview do projeto">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">API RESTful Boilerplate</h3>
+          <p class="card-description">
+            Boilerplate para APIs RESTful com autenticação JWT, validação e documentação automática.
+          </p>
+          <div class="card-techs">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">Swagger</span>
+          </div>
+          <div class="card-stats">
+            <span class="stat"><i class="far fa-star"></i> 167</span>
+            <span class="stat"><i class="fas fa-code-branch"></i> 31</span>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="project-card">
+          <div class="card-header">
+            <div class="folder-icon">
+              <i class="far fa-folder"></i>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" aria-label="Código fonte">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Preview do projeto">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Weather Dashboard</h3>
+          <p class="card-description">
+            Dashboard de previsão do tempo com visualização de dados em tempo real e gráficos interativos.
+          </p>
+          <div class="card-techs">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">D3.js</span>
+            <span class="tech-tag">OpenWeather API</span>
+            <span class="tech-tag">Chart.js</span>
+          </div>
+          <div class="card-stats">
+            <span class="stat"><i class="far fa-star"></i> 73</span>
+            <span class="stat"><i class="fas fa-code-branch"></i> 12</span>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="project-card">
+          <div class="card-header">
+            <div class="folder-icon">
+              <i class="far fa-folder"></i>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" aria-label="Código fonte">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="#" aria-label="Preview do projeto">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Chat Application</h3>
+          <p class="card-description">
+            Aplicativo de chat com salas privadas, mensagens em tempo real e criptografia de ponta.
+          </p>
+          <div class="card-techs">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Firebase</span>
+            <span class="tech-tag">WebSocket</span>
+            <span class="tech-tag">Tailwind</span>
+          </div>
+          <div class="card-stats">
+            <span class="stat"><i class="far fa-star"></i> 94</span>
+            <span class="stat"><i class="fas fa-code-branch"></i> 18</span>
+          </div>
+        </article>
+      </div>
+      <div class="projects-cta">
+        <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <span>Ver mais no GitHub</span>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;contato /&gt;</span>
+        <h2 class="section-title">Vamos Conversar?</h2>
+        <div class="title-underline"></div>
+        <p class="section-description">Estou disponível para oportunidades e colaborações</p>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Entre em Contato</h3>
+          <p>Sinta-se à vontade para me enviar uma mensagem. Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades de fazer parte de seus projetos.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <span class="label">Email</span>
+                <a href="mailto:contato@jvs4nt.dev">contato@jvs4nt.dev</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <span class="label">Localização</span>
+                <span>São Paulo, Brasil</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/jvs4nt" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="subject">Assunto</label>
+            <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" placeholder="Sua mensagem..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-submit">
+            <span>Enviar Mensagem</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="#" class="logo">
+            <span class="logo-bracket">&lt;</span>
+            <span class="logo-text">jvs4nt</span>
+            <span class="logo-bracket">/&gt;</span>
+          </a>
+          <p>Desenvolvendo o futuro, uma linha de código por vez.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navegação</h4>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">Sobre</a></li>
+              <li><a href="#projects">Projetos</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Social</h4>
+            <ul>
+              <li><a href="https://github.com/jvs4nt" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/jvs4nt" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="mailto:contato@jvs4nt.dev">Email</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 João Santos Dev. Todos os direitos reservados.</p>
+        <p class="made-with">
+          Feito com <i class="fas fa-heart"></i> e código
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
