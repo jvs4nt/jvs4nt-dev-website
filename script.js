@@ -47,8 +47,8 @@ function initCursor() {
     const dx = mouseX - followerX;
     const dy = mouseY - followerY;
 
-    followerX += dx * 0.15;
-    followerY += dy * 0.15;
+    followerX += dx * 0.28;
+    followerY += dy * 0.28;
 
     follower.style.left = followerX + 'px';
     follower.style.top = followerY + 'px';
