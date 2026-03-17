@@ -86,7 +86,8 @@ body {
   width: 40px;
   height: 40px;
   border: 2px solid var(--color-primary);
-  transition: all var(--transition-slow);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  will-change: transform, left, top;
 }
 
 .cursor.hover {
