@@ -270,6 +270,64 @@ function initContactForm() {
 
   const statusEl = document.getElementById('formStatus');
   const formEndpoint = form.dataset.formEndpoint;
+  const feedbackModal = document.getElementById('feedbackModal');
+  const modalCloseBtn = document.getElementById('feedbackModalClose');
+  const modalActionBtn = document.getElementById('feedbackModalAction');
+  const modalTitle = document.getElementById('feedbackModalTitle');
+  const modalMessage = document.getElementById('feedbackModalMessage');
+  const modalIcon = document.getElementById('feedbackModalIcon');
+  let autoCloseTimer;
+
+  function closeFeedbackModal() {
+    if (!feedbackModal) return;
+    feedbackModal.classList.remove('is-open', 'error');
+    feedbackModal.setAttribute('aria-hidden', 'true');
+    if (autoCloseTimer) {
+      clearTimeout(autoCloseTimer);
+      autoCloseTimer = null;
+    }
+  }
+
+  function openFeedbackModal({ isError = false, title, message }) {
+    if (!feedbackModal || !modalTitle || !modalMessage || !modalIcon) return;
+
+    feedbackModal.classList.toggle('error', isError);
+    feedbackModal.classList.add('is-open');
+    feedbackModal.setAttribute('aria-hidden', 'false');
+    modalTitle.textContent = title;
+    modalMessage.textContent = message;
+    modalIcon.innerHTML = isError
+      ? '<i class="fas fa-circle-exclamation"></i>'
+      : '<i class="fas fa-check"></i>';
+
+    if (!isError) {
+      autoCloseTimer = setTimeout(closeFeedbackModal, 4000);
+    }
+  }
+
+  if (feedbackModal && !feedbackModal.dataset.listenersReady) {
+    feedbackModal.addEventListener('click', (event) => {
+      if (event.target.closest('[data-close-modal="true"]')) {
+        closeFeedbackModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && feedbackModal.classList.contains('is-open')) {
+        closeFeedbackModal();
+      }
+    });
+
+    feedbackModal.dataset.listenersReady = 'true';
+  }
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeFeedbackModal);
+  }
+
+  if (modalActionBtn) {
+    modalActionBtn.addEventListener('click', closeFeedbackModal);
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -280,6 +338,11 @@ function initContactForm() {
         statusEl.classList.remove('success');
         statusEl.classList.add('error');
       }
+      openFeedbackModal({
+        isError: true,
+        title: 'Formulario nao configurado',
+        message: 'Configure o endpoint do Formspree para ativar o envio de mensagens.'
+      });
       return;
     }
 
@@ -319,6 +382,10 @@ function initContactForm() {
         statusEl.classList.remove('error');
         statusEl.classList.add('success');
       }
+      openFeedbackModal({
+        title: 'Mensagem enviada!',
+        message: 'Obrigado pelo contato. Vou te responder em breve.'
+      });
       form.reset();
     } catch (error) {
       if (statusEl) {
@@ -326,6 +393,11 @@ function initContactForm() {
         statusEl.classList.remove('success');
         statusEl.classList.add('error');
       }
+      openFeedbackModal({
+        isError: true,
+        title: 'Falha no envio',
+        message: 'Nao foi possivel enviar sua mensagem agora. Tente novamente em instantes.'
+      });
       console.error('Erro no envio do formulario:', error);
     } finally {
       setTimeout(() => {

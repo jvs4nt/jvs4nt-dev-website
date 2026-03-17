@@ -1088,6 +1088,98 @@ a {
   color: #fca5a5;
 }
 
+/* Contact Feedback Modal */
+.feedback-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: calc(var(--z-modal) + 2);
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.feedback-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.feedback-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+.feedback-modal-content {
+  position: relative;
+  width: min(92vw, 440px);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  padding: 26px;
+  text-align: center;
+  transform: translateY(16px) scale(0.96);
+  opacity: 0;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.feedback-modal.is-open .feedback-modal-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.feedback-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.feedback-modal-icon {
+  width: 62px;
+  height: 62px;
+  margin: 8px auto 14px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: #6ee7b7;
+  background: rgba(110, 231, 183, 0.12);
+  border: 1px solid rgba(110, 231, 183, 0.45);
+}
+
+.feedback-modal.error .feedback-modal-icon {
+  color: #fca5a5;
+  background: rgba(252, 165, 165, 0.12);
+  border-color: rgba(252, 165, 165, 0.45);
+}
+
+.feedback-modal-title {
+  margin-bottom: 8px;
+  font-size: 1.35rem;
+}
+
+.feedback-modal-message {
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+.feedback-modal-action {
+  width: 100%;
+  justify-content: center;
+}
+
 /* ========================================
    Footer
    ======================================== */
