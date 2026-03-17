@@ -1277,6 +1277,19 @@ a {
     font-size: 14px;
   }
 
+  body {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-follower {
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
   .nav-links {
     position: fixed;
     top: 70px;

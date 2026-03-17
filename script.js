@@ -20,9 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function initCursor() {
   const cursor = document.querySelector('.cursor');
   const follower = document.querySelector('.cursor-follower');
+  if (!cursor || !follower) return;
 
-  // Only enable on non-touch devices
-  if (window.matchMedia('(hover: none), (pointer: coarse)').matches) {
+  // Disable on touch devices and small screens
+  if (window.matchMedia('(hover: none), (pointer: coarse), (max-width: 768px)').matches) {
     return;
   }
 
@@ -401,8 +402,8 @@ function initTiltEffect() {
   });
 }
 
-// Enable tilt effect on larger screens
-if (window.matchMedia('(min-width: 768px)').matches) {
+// Enable tilt effect only on larger, non-touch screens
+if (window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)').matches) {
   initTiltEffect();
 }
 
